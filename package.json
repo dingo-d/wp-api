@@ -1,7 +1,7 @@
 {
   "name": "wp-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "React based WordPress app",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open"

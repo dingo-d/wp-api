@@ -1,28 +1,12 @@
-import React        from 'react';
-import {render}     from 'react-dom';
-import App          from './components/App.js';
-import Home         from './components/Home.js';
+var React = require('react');
+var RenderDOM = require('react-dom');
+var App = require('./components/App');
+var Home = require('./components/Home');
+var Navigation = require('./components/Navigation');
+require('./sass/application.scss');
 
-import {
-  browserHistory,
-  IndexRoute,
-  Redirect,
-  Route,
-  Router
-} from 'react-router';
-
-class AppInitializer {
-    run() {
-        render(
-            <Router history={browserHistory}>
-                <Route path="/" component={ App } >
-                    <IndexRoute component={ Home } />
-                </Route>
-                <Redirect from="*" to="/" />
-            </Router>
-            , document.getElementById('app')
-        );
-    }
-}
-
-new AppInitializer().run();
+ReactDOM.render(
+  <Navigation />
+  <App />,
+  document.getElementById('app')
+);
