@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "React based WordPress app",
   "main": "index.js",
-  "scripts": {
-    "start": "webpack-dev-server --open"
-  },
   "dependencies": {
     "alt": "^0.18.6",
     "axios": "^0.15.3",
@@ -29,6 +26,7 @@
     "webpack-dev-server": "^2.4.2"
   },
   "scripts": {
+    "start": "webpack-dev-server --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Denis Žoljom",
