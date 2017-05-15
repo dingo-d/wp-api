@@ -1,5 +1,5 @@
-var webpack = require('webpack');
 var path    = require('path');
+var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const outputCss = 'styles/[name].css';
@@ -21,7 +21,7 @@ var config = {
   },
   resolve: {
     modulesDirectories: ['node_modules', 'app'], // Folders where Webpack is going to look for files to bundle together
-    extensions: ['', '.js'] // Extensions that Webpack is going to expect
+    extensions: ['*', '.js'] // Extensions that Webpack is going to expect
   },
   module: {
     // Loaders allow you to preprocess files as you require() or “load” them. Loaders are kind of like “tasks” in other build tools, and provide a powerful way to handle frontend build steps.
