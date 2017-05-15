@@ -1,11 +1,15 @@
-// Main style
+/* stylelint-disable */
+// Vendors - node modules
+@import '~normalize.css';
+@import '~media-blender';
+@import '~susy';
 
-@import 'vendor/**/*';
-
+// Main files
 @import 'config';
-@import 'utils/**/*';
+@import 'utils/colors';
+@import 'utils/z-indexes';
 
 @import 'core';
 
-@import 'components/**/*';
-@import 'pages/**/*';
+// @import 'components/**/*';
+// @import 'pages/**/*';

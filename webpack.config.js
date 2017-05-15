@@ -1,6 +1,7 @@
 var path    = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const outputCss = 'styles/[name].css';
 
@@ -20,7 +21,7 @@ var config = {
     // publicPath: '/'
   },
   resolve: {
-    modulesDirectories: ['node_modules', 'app'], // Folders where Webpack is going to look for files to bundle together
+    modules: ['node_modules', 'app'], // Folders where Webpack is going to look for files to bundle together
     extensions: ['*', '.js'] // Extensions that Webpack is going to expect
   },
   module: {
@@ -52,10 +53,11 @@ var config = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(), // Hot reloading
-    new webpack.NoErrorsPlugin(), // Webpack will let you know if there are any errors
+    new webpack.NoEmitOnErrorsPlugin(), // Webpack will let you know if there are any errors
     new HtmlWebpackPlugin({
       template: 'app/index.html'
     }),
+    new ExtractTextPlugin(outputCss)
   ]
 }
 
