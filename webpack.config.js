@@ -54,7 +54,7 @@ var config = {
     new webpack.HotModuleReplacementPlugin(), // Hot reloading
     new webpack.NoErrorsPlugin(), // Webpack will let you know if there are any errors
     new HtmlWebpackPlugin({
-      template: 'app/index.html'
+      template: 'index.html'
     }),
   ]
 }
