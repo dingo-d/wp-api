@@ -1,5 +1,4 @@
 var React = require('react');
-var Navigation = require('./Navigation');
 
 class App extends React.Component {
 
@@ -10,7 +9,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="wrapper">
-        <Navigation />
         {this.props.children}
       </div>
     );
