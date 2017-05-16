@@ -26,13 +26,19 @@ var config = {
   },
   module: {
     // Loaders allow you to preprocess files as you require() or “load” them. Loaders are kind of like “tasks” in other build tools, and provide a powerful way to handle frontend build steps.
-    loaders: [
-      {
+    loaders: [{
       test: /\.jsx?$/, // Here we're going to use JS for react components but including JSX in case this extension is prefered
       exclude: /node_modules/, // Speaks for itself
-      loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015'] // Modules that help with hot reloading and ES6 transcription
-      }
-    ],
+      // Modules that help with hot reloading and ES6 transcription
+      use: [{
+        loader: 'react-hot'
+      }, {
+        loader: 'babel',
+        query: {
+          presets: ['react', 'es2015']
+        }
+      }]
+    }],
     rules: [
       { test: /\.(js)$/, use: 'babel-loader' },
       {
