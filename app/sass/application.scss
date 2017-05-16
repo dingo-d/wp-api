@@ -6,7 +6,11 @@
 
 // Main files
 @import 'config';
+
+// Utility
 @import 'utils/colors';
+@import 'utils/mixins';
+@import 'utils/shared-variables';
 @import 'utils/z-indexes';
 
 @import 'core';
