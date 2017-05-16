@@ -39,23 +39,28 @@ var config = {
         }
       }]
     }],
-    rules: [
-      { test: /\.(js)$/, use: 'babel-loader' },
-      {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader'
-            },
-            {
-              loader: 'sass-loader'
-            }
-          ]
-        })
+    rules: [{
+      test: /\.(js)$/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['env']
+        }
       }
-    ]
+    }, {
+      test: /\.scss$/,
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: [
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
+      })
+    }]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(), // Hot reloading
