@@ -11,11 +11,12 @@ branches:
 
 env:
   matrix:
-  - TEST_TYPE=build
+  # - TEST_TYPE=build
   - TEST_TYPE=test
   - TEST_TYPE=lint
-  - TEST_TYPE=flow
-  - TEST_TYPE=build_website
+  - TEST_TYPE=start
+  # - TEST_TYPE=flow
+  # - TEST_TYPE=build_website
 
 script:
   # Check archetype.
