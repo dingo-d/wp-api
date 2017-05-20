@@ -1,7 +1,7 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var App = require('./components/App');
-var Home = require('./components/Home');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+import Home from './components/home/Home';
 require('./sass/application.scss');
 
 import {
