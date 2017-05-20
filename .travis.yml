@@ -20,4 +20,3 @@ env:
 script:
   # Check archetype.
   - npm --version
-  - npm run builder:check
