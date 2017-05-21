@@ -1,9 +1,10 @@
 import axios from 'axios';
+import alt   from './../alt/alt.js';
 
 class DataActions {
 
   constructor() {
-    const appUrl = 'http://wordpress-installation-example-url.com'; // Replace this with your WP installation url
+    const appUrl = 'http://madebydenis.com/'; // Replace this with your WP installation url
 
     this.pagesEndPoint = `${appUrl}/wp-json/wp/v2/pages`; // Endpoint for getting Wordpress Pages
     this.postsEndPoint = `${appUrl}/wp-json/wp/v2/posts`; // Endpoint for getting Wordpress Posts
@@ -30,8 +31,8 @@ class DataActions {
   // Method for getting Posts data
   getPosts(pages, cb){
     this.api(this.postsEndPoint).then((response) => {
-      const posts   = response
-      const payload   = { pages, posts };
+      const posts = response
+      const payload = { pages, posts };
 
       this.getSuccess(payload); // Pass returned data to the store
       cb(payload); // This callback will be used for dynamic rout building
@@ -44,3 +45,5 @@ class DataActions {
     return payload;
   }
 }
+
+export default alt.createActions(DataActions);
