@@ -13,6 +13,8 @@ class DataStore {
         this.exportPublicMethods({
             getAll: this.getAll,
             getAllPages: this.getAllPages,
+            getAllPosts: this.getAllPosts,
+            getAllCategories: this.getAllCategories,
             getPageBySlug: this.getPageBySlug
         });
     }
@@ -34,7 +36,12 @@ class DataStore {
 
     // Returns all Posts
     getAllPosts() {
-        return this.getState().posts;
+        return this.getState().data.posts;
+    }
+
+    // Returns all Categories
+    getAllCategories() {
+        return this.getState().data.categories;
     }
 
     // Returns a Page by provided slug

@@ -1,14 +1,27 @@
 import React from 'react';
 import DataStore from './../../stores/DataStore.js';
+var Post = require('./Post');
+
+function PostList(props) {
+  let allPosts = props.posts;
+
+  return (
+    <div className='post-wrapper'>
+      {allPosts.forEach((post, index) => {
+        <Post postTitle={post.title.rendered} postDescription={post.excerpt.rendered} />
+      })}
+    </div>
+  )
+}
 
 class Home extends React.Component {
 
   render() {
-    let allData = DataStore.getAll(); // Gets the data from the WordPress
+    let posts = DataStore.getAllPosts();
 
     return (
       <div>
-        <h1>Hello World</h1>
+        <PostList posts={posts} />
       </div>
     );
   }

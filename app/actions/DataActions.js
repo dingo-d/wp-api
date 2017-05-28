@@ -12,7 +12,7 @@ class DataActions {
     this.taxonomiesEndPoint = `${appUrl}/wp-json/wp/v2/taxonomies`; // Endpoint for getting Wordpress Taxonomies
     this.categoriesEndPoint = `${appUrl}/wp-json/wp/v2/categories`; // Endpoint for getting Wordpress Categories
     this.tagsEndPoint = `${appUrl}/wp-json/wp/v2/tags`; // Endpoint for getting Wordpress Tags
-    this.settingsEndPoint = `${appUrl}/wp-json/wp/v2/settings`; // Endpoint for getting Wordpress Settings
+    // this.settingsEndPoint = `${appUrl}/wp-json/wp/v2/settings`; // Endpoint for getting Wordpress Settings
   }
 
   // Method for getting data from the provided end point url
@@ -29,18 +29,30 @@ class DataActions {
   // Method for getting Pages data
   getPages(cb){
     this.api(this.pagesEndPoint).then((response) => {
-      this.getPosts(response, cb)
+      this.getPosts(response, cb);
     });
   }
 
   // Method for getting Posts data
   getPosts(pages, cb){
     this.api(this.postsEndPoint).then((response) => {
-      const posts = response
+      const posts = response;
       const payload = { pages, posts };
 
       this.getSuccess(payload); // Pass returned data to the store
       cb(payload); // This callback will be used for dynamic rout building
+    });
+  }
+
+  getMedia(cb){
+    this.api(this.mediaEndPoint).then((response) => {
+      this.getPosts(response, cb);
+    });
+  }
+
+  getCategories(cb){
+    this.api(this.categoriesEndPoint).then((response) => {
+      this.getPosts(response, cb);
     });
   }
 
