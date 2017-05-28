@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import Home from './components/home/Home';
+import views from './components/views';
 import DataActions  from './actions/DataActions.js';
 
 require('./sass/application.scss');
@@ -18,9 +19,14 @@ class InitializeApp {
 
   buildRoutes(data) {
     return data.pages.map((page, i) => {
+      const component = views[page.slug];
       return (
         <Route
-          component={ Home }
+          getComponent={(nextState, cb) => {
+            require.ensure([], (require) => {
+              cb(null, require(component).default);
+            });
+          }}
           key={ page.id }
           path={`/${page.slug}`}
         />

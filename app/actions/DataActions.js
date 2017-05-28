@@ -8,6 +8,11 @@ class DataActions {
 
     this.pagesEndPoint = `${appUrl}/wp-json/wp/v2/pages`; // Endpoint for getting Wordpress Pages
     this.postsEndPoint = `${appUrl}/wp-json/wp/v2/posts`; // Endpoint for getting Wordpress Posts
+    this.mediaEndPoint = `${appUrl}/wp-json/wp/v2/media`; // Endpoint for getting Wordpress Media
+    this.taxonomiesEndPoint = `${appUrl}/wp-json/wp/v2/taxonomies`; // Endpoint for getting Wordpress Taxonomies
+    this.categoriesEndPoint = `${appUrl}/wp-json/wp/v2/categories`; // Endpoint for getting Wordpress Categories
+    this.tagsEndPoint = `${appUrl}/wp-json/wp/v2/tags`; // Endpoint for getting Wordpress Tags
+    this.settingsEndPoint = `${appUrl}/wp-json/wp/v2/settings`; // Endpoint for getting Wordpress Settings
   }
 
   // Method for getting data from the provided end point url

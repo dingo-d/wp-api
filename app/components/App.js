@@ -1,4 +1,6 @@
 var React = require('react');
+import Nav from './Nav.js';
+
 
 class App extends React.Component {
 
@@ -9,6 +11,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="wrapper">
+        <Nav />
         {this.props.children}
       </div>
     );
