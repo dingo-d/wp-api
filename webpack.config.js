@@ -5,8 +5,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const outputCss = 'styles/[name].css';
 
-process.traceDepreciation = true;
-
 var config = {
   devtool: 'inline-source-map', // This will show line numbers where errors are accured in the terminal
   devServer: {
@@ -43,6 +41,7 @@ var config = {
     }],
     rules: [{
       test: /\.(js)$/,
+      exclude: /node_modules/,
       use: {
         loader: 'babel-loader',
         options: {
@@ -53,7 +52,14 @@ var config = {
       test: /\.scss$/,
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
-        use: [ 'css-loader', 'sass-loader', 'postcss-loader']
+        use: [
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
       })
     }]
   },
