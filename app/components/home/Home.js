@@ -7,8 +7,10 @@ function PostList(props) {
 
   return (
     <div className='post-wrapper'>
-      {allPosts.forEach((post, index) => {
-        <Post postTitle={post.title.rendered} postDescription={post.excerpt.rendered} />
+      {allPosts.map( (post, index) => {
+        return (
+          <Post key={index} postTitle={post.title.rendered} postDescription={post.excerpt.rendered} />
+        )
       })}
     </div>
   )
