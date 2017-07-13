@@ -4,7 +4,7 @@ import alt   from './../alt/alt.js';
 class DataActions {
 
   constructor() {
-    const appUrl = 'http://madebydenis.com/'; // Replace this with your WP installation url
+    const appUrl = 'http://build.wordpress-develop.dev/'; // Replace this with your WP installation url
 
     this.pagesEndPoint = `${appUrl}/wp-json/wp/v2/pages`; // Endpoint for getting Wordpress Pages
     this.postsEndPoint = `${appUrl}/wp-json/wp/v2/posts`; // Endpoint for getting Wordpress Posts
