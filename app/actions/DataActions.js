@@ -12,6 +12,7 @@ class DataActions {
     this.taxonomiesEndPoint = `${appUrl}/wp-json/wp/v2/taxonomies`; // Endpoint for getting Wordpress Taxonomies
     this.categoriesEndPoint = `${appUrl}/wp-json/wp/v2/categories`; // Endpoint for getting Wordpress Categories
     this.tagsEndPoint = `${appUrl}/wp-json/wp/v2/tags`; // Endpoint for getting Wordpress Tags
+    this.commentsEndPoint = `${appUrl}/wp-json/wp/v2/comments`; // Endpoint for getting Wordpress Tags
     // this.settingsEndPoint = `${appUrl}/wp-json/wp/v2/settings`; // Endpoint for getting Wordpress Settings
   }
 
@@ -52,6 +53,12 @@ class DataActions {
 
   getCategories(cb){
     this.api(this.categoriesEndPoint).then((response) => {
+      this.getPosts(response, cb);
+    });
+  }
+
+  getComments(cb){
+    this.api(this.commentsEndPoint).then((response) => {
       this.getPosts(response, cb);
     });
   }
