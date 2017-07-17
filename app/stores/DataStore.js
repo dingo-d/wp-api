@@ -1,5 +1,5 @@
-import alt          from './../alt/alt.js';
-import DataActions  from './../actions/DataActions.js';
+import alt from './../alt/alt.js';
+import DataActions from './../actions/DataActions.js';
 
 class DataStore {
     constructor() {

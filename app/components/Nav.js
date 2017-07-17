@@ -1,6 +1,6 @@
-import React    from 'react';
-import { Link } from 'react-router';
-import _        from 'lodash';
+import React from 'react';
+import {Link} from 'react-router';
+import _ from 'lodash';
 
 import DataStore from './../stores/DataStore.js';
 

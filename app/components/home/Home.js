@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 import DataStore from './../../stores/DataStore.js';
-var Post = require('./Post');
+import Post from './Post';
 
 function PostList(props) {
   let allPosts = props.posts;
@@ -16,7 +16,7 @@ function PostList(props) {
   )
 }
 
-class Home extends React.Component {
+class Home extends Component {
 
   render() {
     let posts = DataStore.getAllPosts();
@@ -29,4 +29,4 @@ class Home extends React.Component {
   }
 }
 
-module.exports = Home;
+export default Home;
